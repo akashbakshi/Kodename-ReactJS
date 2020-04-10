@@ -9,6 +9,7 @@ import indigo from "@material-ui/core/colors/indigo";
 import deepOrange from "@material-ui/core/colors/deepOrange";
 
 import {AppBar,Toolbar,Typography} from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 
 const theme = createMuiTheme({
     palette: {
@@ -49,6 +50,13 @@ class App extends Component {
     getMainMenuInfo(nickname,roomId){
         console.log("main menu "+nickname);
         console.log("main menu "+roomId);
+
+        this.setState({
+            nickname:nickname,
+            room:roomId
+        })
+
+        this.props.history.push("/game?room="+roomId)
     }
 
 
@@ -57,19 +65,17 @@ class App extends Component {
         return (
             <ThemeProvider theme={theme}>
                 <Menu/>
-                <BrowserRouter>
                     <Switch>
                         <Route exact path={"/"}>
                             <MainMenu gameInfo={this.getMainMenuInfo}/>
                         </Route>
 
-                        <Route path={"/game"} component={Game}/>
+                        <Route path={"/game"} render={(props)=><Game nickname={this.state.nickname} search={props.location.search}/>  } />
                     </Switch>
 
-                </BrowserRouter>
             </ThemeProvider>
         );
     }
 }
 
-export default App;
+export default withRouter(App);
