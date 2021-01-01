@@ -7,7 +7,7 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import indigo from "@material-ui/core/colors/indigo";
 import deepOrange from "@material-ui/core/colors/deepOrange";
-
+import { HubConnectionBuilder } from '@microsoft/signalr';
 import {AppBar,Toolbar,Typography} from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 
@@ -15,6 +15,9 @@ const theme = createMuiTheme({
     palette: {
         primary: {
             main: indigo.A700
+        },
+        primaryDark:{
+            main: indigo.A200
         },
         secondary:{
             main: deepOrange.A400
@@ -26,7 +29,7 @@ function Menu(){
     return(
         <AppBar position="static">
             <Toolbar>
-                <Typography>
+                <Typography variant={"h4"}>
                     Kodenames
                 </Typography>
 
@@ -41,20 +44,24 @@ class App extends Component {
         super(props);
         this.state ={
             nickname:null,
-            room:null
+            room:null,
+            roundTime:null,
+            isTimed: false
         }
 
         this.getMainMenuInfo = this.getMainMenuInfo.bind(this);
     }
 
-    getMainMenuInfo(nickname,roomId){
-        console.log("main menu "+nickname);
-        console.log("main menu "+roomId);
+    getMainMenuInfo(nickname,isTimed,roomId,roundTime){
 
         this.setState({
             nickname:nickname,
-            room:roomId
-        })
+            room:roomId,
+            roundTime: roundTime,
+            isTimed: isTimed
+        });
+
+
 
         this.props.history.push("/game?room="+roomId)
     }
@@ -70,7 +77,7 @@ class App extends Component {
                             <MainMenu gameInfo={this.getMainMenuInfo}/>
                         </Route>
 
-                        <Route path={"/game"} render={(props)=><Game nickname={this.state.nickname} search={props.location.search}/>  } />
+                        <Route path={"/game"} render={(props)=><Game nickname={this.state.nickname} isTimed={this.state.isTimed} roundTime={this.state.roundTime} newgame={true} history={props.history} search={props.location.search}/>  } />
                     </Switch>
 
             </ThemeProvider>

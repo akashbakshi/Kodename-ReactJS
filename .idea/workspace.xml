@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9598fb8a-0624-4e5c-a603-ec97592d3d7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Board.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +27,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -67,6 +81,7 @@
       <item itemvalue="npm.npm start" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -81,6 +96,9 @@
       <workItem from="1586385545353" duration="846000" />
       <workItem from="1586386406027" duration="2505000" />
       <workItem from="1586460118740" duration="23078000" />
+      <workItem from="1609278689368" duration="8485000" />
+      <workItem from="1609333965559" duration="45704000" />
+      <workItem from="1609428642198" duration="27474000" />
     </task>
     <task id="LOCAL-00001" summary="- Added Menu&#10;- Added state to main App to handle info passing&#10;- Added Logic to make post call on join button click&#10;- Append appropriate info to props and pass back to app component&#10;&#10;- Added Router to handle rendering different components depending on the page">
       <created>1586495624906</created>
@@ -93,60 +111,33 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Added Menu&#10;- Added state to main App to handle info passing&#10;- Added Logic to make post call on join button click&#10;- Append appropriate info to props and pass back to app component&#10;&#10;- Added Router to handle rendering different components depending on the page" />
     <option name="LAST_COMMIT_MESSAGE" value="- Added Menu&#10;- Added state to main App to handle info passing&#10;- Added Logic to make post call on join button click&#10;- Append appropriate info to props and pass back to app component&#10;&#10;- Added Router to handle rendering different components depending on the page" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586387190309">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.872@0.0.1368.872" timestamp="1586387190309" />
-    <state x="393" y="122" key="#npm_start" timestamp="1586386409021">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="393" y="122" key="#npm_start/0.0.1368.872@0.0.1368.872" timestamp="1586386409021" />
-    <state x="279" y="5" key="CommitChangelistDialog2" timestamp="1586495624003">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="279" y="5" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1586495624003" />
-    <state x="549" y="202" key="FileChooserDialogImpl" timestamp="1586387184759">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="549" y="202" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1586387184759" />
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1586494079175">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1586494079175" />
-    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1586494079175">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1586494079175" />
-    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1586494079175">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1586494079175" />
-    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1586494079175">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1586494079175" />
-    <state x="186" y="81" key="SettingsEditor" timestamp="1586387294226">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="186" y="81" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1586387294226" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1586495626586">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1586495626586" />
-    <state x="403" y="246" key="jetbrains.nodejs.interpreters-dialog" timestamp="1586387186895">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="403" y="246" key="jetbrains.nodejs.interpreters-dialog/0.0.1368.872@0.0.1368.872" timestamp="1586387186895" />
-    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1586466375108">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1586466375108" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/PlayerBar.js</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

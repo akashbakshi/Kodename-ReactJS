@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btnBlue{
+  background-color: #304ffe !important;
+}
+
+.btnOrange{
+  background-color: #ff3d00 !important;
+}
+.btnNeutral{
+  background-color: #ffe0b2 !important;
+  color: #000 !important;
+}
+.btnLandmine{
+  background-color: #000000 !important;
+  color: #fff !important;
+}
