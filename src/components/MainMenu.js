@@ -3,8 +3,13 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-
-import {ExpansionPanel,ExpansionPanelSummary,ExpansionPanelDetails} from "@material-ui/core";
+import {
+    ExpansionPanel,
+    ExpansionPanelSummary,
+    ExpansionPanelDetails,
+    Switch,
+    FormControlLabel
+} from "@material-ui/core";
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -14,39 +19,21 @@ export class MainMenu extends Component{
         super(props);
         this.state={
             nickname:"",
-            room:""
+            room:"",
+            timedRound:false,
+            roundTime:60,
         }
         this.createRoom = this.createRoom.bind(this);
+        this.onTimeSwitchChange = this.onTimeSwitchChange.bind(this);
     }
 
     createRoom = ()=>{
-        let nickname = document.getElementById("nickname").value;
-
-        fetch("http://localhost:5000/game",{
-            method:"POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                msgType: 'JOIN',
-                nickname:nickname
-            })
-        })
-            .then(response => {
-                response.json().then(json => {
-                    // code that can access both here
-
-                    this.setState({
-                        nickname:nickname,
-                        room:json.room
-                    });
-
-                    this.props.gameInfo(nickname,json.room);
-                })
-            })
+        this.props.gameInfo(this.state.nickname,this.state.timedRound,this.state.room,this.state.roundTime);
     }
 
+    onTimeSwitchChange = (e)=>{
+        this.setState({timedRound: !this.state.timedRound})
+    };
 
     render(){
         return(
@@ -60,17 +47,34 @@ export class MainMenu extends Component{
                     justify={"center"}
                     xs={12} spacing={2}>
                   <Grid item alignItems={"center"}>
-                      <Typography variant={"h3"} component={"h3"} >Kodenames</Typography>
+                      <Typography variant={"h3"} component={"h3"} onClick={()=>console.log("home")} >Kodenames</Typography>
                   </Grid>
 
                   <Grid item alignItems={"center"}>
-                      <TextField  id="nickname" name="nickname" label="Nickname" variant="outlined" />
+                      <TextField value={this.state.nickname} InputLabelProps={{ shrink: this.state.nickname != "", }} onChange={(e)=>this.setState({nickname:e.target.value})}  label="Nickname" variant="outlined" />
+                      <br/>
+                      <br/>
+                      <TextField value={this.state.room} InputLabelProps={{ shrink: this.state.room != "", }}  onChange={(e)=>this.setState({room:e.target.value})}  label="Room Name" variant="outlined" />
+                      <br/>
+                      <br/>
+                      <FormControlLabel control={
+                          <Switch
+                              checked={this.state.timedRound}
+                              onChange={this.onTimeSwitchChange}
+                              name="timeSwitch"
+                              inputProps={{ 'aria-label': 'secondary checkbox' }}
+                          />
+
+                      } label={"Time Limit"}/>
+                      <br/>
+                      <br/>
+                      <TextField disabled={this.state.timedRound === false} value={this.state.roundTime} InputLabelProps={{ shrink: true, }} type={"number"} onChange={(e)=>this.setState({roundTime:e.target.value})}  label="Round Time" variant="outlined" />
                       <br/>
                       <br/>
                       <Button onClick={this.createRoom} variant={"contained"} color={"secondary"}>Join</Button>
                   </Grid>
 
-                  <Grid item alignItems={"center"} padding={"xs"}>
+                  <Grid item alignItems={"center"} padding={"xs"} xs={12} md={8}>
                       <ExpansionPanel>
                           <ExpansionPanelSummary
                               expandIcon={<ExpandMoreIcon />}
@@ -82,7 +86,7 @@ export class MainMenu extends Component{
 
                           <ExpansionPanelDetails>
                               <Typography>
-                                  1) Each team will be assigned either 8 or 9 words randomly, the team with 9 words starts their turn first. The objective is to guess all the words
+                                  1) Each team will be assigned either 8 or 9 words randomly, the team with 9 words starts their turn first. The objective is to guess all the words before the other team
 
                               </Typography>
                           </ExpansionPanelDetails>
@@ -90,35 +94,29 @@ export class MainMenu extends Component{
 
                           <ExpansionPanelDetails>
                               <Typography>
-                                  In Addition to the 17 words the two teams will have to guess there will be 6 neutral words and 1 land mine for a total of 24 words
+                                  In addition to the 17 words the two teams will have to guess there will be 7 neutral words and 1 land mine for a total of 25 words
                               </Typography>
                           </ExpansionPanelDetails>
                          <ExpansionPanelDetails>
                               <Typography>
-                                  2) Two teams will choose one person each from their team to become the 'Spy Master'.
-                              </Typography>
-                          </ExpansionPanelDetails>
-                          <ExpansionPanelDetails>
-                              <Typography>
-                                  The Spy Master will give their team 'x' number of words they have to guess and one general word that relates to those 'x' number of words
-                              </Typography>
-                          </ExpansionPanelDetails>
-
-
-                          <ExpansionPanelDetails>
-                              <Typography>
-                                  3) The Spy Master will give their team 'x' number of words they have to guess and one general word that relates to those 'x' number of words
-                              </Typography>
-                          </ExpansionPanelDetails>
-                          <ExpansionPanelDetails>
-                              <Typography>
-                                  4) If they select either the wrong word or a neutral word their turn is automatically done and the next team starts theirs.
+                                  2) Each team will choose one person from their team to become the 'Spy Master'.
                               </Typography>
                           </ExpansionPanelDetails>
 
                           <ExpansionPanelDetails>
                               <Typography>
-                                  If any team selects the landmine word they lose.
+                                  3) The Spy Master will give their team 'x' number of words they have to guess and a one word clue that describes those 'x' number of words, ex. "3 fruit", if they were describing the words Apple,Orange, Strawberry.
+                              </Typography>
+                          </ExpansionPanelDetails>
+                          <ExpansionPanelDetails>
+                              <Typography>
+                                  4) Once given the hint the rest of the team has 'x' number of minutes (x being the number of seconds you select at the main menu) to guess the word(s) they think the Spy Master is hinting at. All team members must agree before choosing the word(s), if they happen to select a word that is neutral or belongs to the other team their turn is over.
+                              </Typography>
+                          </ExpansionPanelDetails>
+
+                          <ExpansionPanelDetails>
+                              <Typography>
+                                  5) If any team selects the landmine word they lose automatically and the game is over.
                               </Typography>
                           </ExpansionPanelDetails>
 
