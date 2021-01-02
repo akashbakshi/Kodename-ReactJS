@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonDefault:{
         backgroundColor: "#e0e0e0",
+        fontSize: "1.5rem",
         color: "#000",
         width: '100%',
         height: '100%'

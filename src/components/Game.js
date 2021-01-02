@@ -363,7 +363,7 @@ export class Game extends Component{
                         <PlayerBar winner={this.state.gameSession.winner} onRoleChange={this.handleSpyMasterChange} onTeamChange={this.handleTeamChange} teams={this.state.gameSession.teams} currentRole={this.state.role} currentTeam={this.state.team}  />
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={5}  justify="center"
+                    <Grid item xs={12} md={8} lg={8}  justify="center"
                           alignItems="center" >
                         <Snackbar open={this.state.error === 3} onClose={this.handleSnackbarClose} message={"Someone on your team is already the Spymaster"}/>
 
