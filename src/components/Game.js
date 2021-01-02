@@ -124,7 +124,7 @@ export class Game extends Component{
 
         const roomName = query.get("room");
         const connection = new signalR.HubConnectionBuilder()
-            .withUrl('http://10.0.0.245:5000/gamehub')
+            .withUrl('https://localhost:5001/gamehub')
             .withAutomaticReconnect()
             .configureLogging(signalR.LogLevel.Information)
             .build();

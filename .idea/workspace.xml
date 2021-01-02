@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9598fb8a-0624-4e5c-a603-ec97592d3d7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Board.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerBar.js" afterDir="false" />
+    <list default="true" id="9598fb8a-0624-4e5c-a603-ec97592d3d7d" name="Default Changelist" comment="- MainMen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +90,10 @@
       <workItem from="1586460118740" duration="23078000" />
       <workItem from="1609278689368" duration="8485000" />
       <workItem from="1609333965559" duration="45704000" />
-      <workItem from="1609428642198" duration="27474000" />
+      <workItem from="1609428642198" duration="30457000" />
+      <workItem from="1609531278198" duration="611000" />
+      <workItem from="1609570225501" duration="1294000" />
+      <workItem from="1609611445834" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="- Added Menu&#10;- Added state to main App to handle info passing&#10;- Added Logic to make post call on join button click&#10;- Append appropriate info to props and pass back to app component&#10;&#10;- Added Router to handle rendering different components depending on the page">
       <created>1586495624906</created>
@@ -107,7 +102,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586495624906</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Added player bar with join and spy master functionality&#10;- Added board logic&#10;- Added logic to connect to backend&#10;- Added appropriate methods to communicate with backend&#10;- v1.0">
+      <created>1609471487287</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609471487287</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- MainMen">
+      <created>1609474188787</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609474188787</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +136,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Added Menu&#10;- Added state to main App to handle info passing&#10;- Added Logic to make post call on join button click&#10;- Append appropriate info to props and pass back to app component&#10;&#10;- Added Router to handle rendering different components depending on the page" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added Menu&#10;- Added state to main App to handle info passing&#10;- Added Logic to make post call on join button click&#10;- Append appropriate info to props and pass back to app component&#10;&#10;- Added Router to handle rendering different components depending on the page" />
+    <MESSAGE value="- Added player bar with join and spy master functionality&#10;- Added board logic&#10;- Added logic to connect to backend&#10;- Added appropriate methods to communicate with backend&#10;- v1.0" />
+    <MESSAGE value="- MainMen" />
+    <option name="LAST_COMMIT_MESSAGE" value="- MainMen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
